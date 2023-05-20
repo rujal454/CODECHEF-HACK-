@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login</title>
+  <link href='https://cdn.jsdelivr.net/npm/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      background-color: #4070f4;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .container {
+      background-color: white;
+      border-radius: 6px;
+      padding: 30px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      width: 100%;
+      max-width: 400px;
+    }
+
+    header {
+      font-size: 28px;
+      font-weight: 600;
+      color: #4070f4;
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    form {
+      margin-top: 30px;
+    }
+
+    .field {
+      height: 50px;
+      position: relative;
+      width: 100%;
+      margin-top: 20px;
+      border-radius: 6px;
+    }
+
+    .input-field input {
+      height: 100%;
+      width: 100%;
+      padding: 0 10px;
+    }
+
+    .field input,
+    .field button {
+      height: 100%;
+      width: 100%;
+      border: none;
+      font-size: 16px;
+    }
+
+    .field button {
+      background-color: #4070f4;
+      color: white;
+      cursor: pointer;
+    }
+
+    .field input {
+      border: 1px solid white;
+    }
+
+    .form-link {
+      text-align: center;
+      margin-top: 10px;
+    }
+
+    .form-link span,
+    .form-link a {
+      font-size: 14px;
+      font-weight: 400;
+      color: #4070f4;
+    }
+
+    .form a {
+      color: blue;
+      text-decoration: underline;
+    }
+
+    .form a:hover {
+      text-decoration: underline;
+    }
+
+    .line {
+      position: relative;
+      height: 1px;
+      margin: 36px 0;
+      background-color: white;
+    }
+
+    .line::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 0;
+      right: 0;
+      background: white;
+      height: 1px;
+      transform: translateY(-50%);
+    }
+
+    .line::after {
+      content: 'Or';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      background: #fff;
+      color: black;
+      padding: 0 10px;
+      transform: translate(-50%, -50%);
+      white-space: nowrap;
+    }
+
+    .media-options {
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    .media-options .facebook,
+    .media-options .google {
+      display: inline-block;
+      text-decoration: none;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      padding: 6px 12px;
+      position: relative;
+      top: -20px;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+    }
+
+    .media-options .facebook {
+      background-color: #3b5998;
+    }
+
+    .media-options .google {
+      background-color: #db4a39;
+    }
+
+    .media-options .facebook i {
+      margin-right: 5px;
+    }
+
+    .media-options .google img {
+      width: 18px;
+      height: 15px;
+      margin-right: 5px;
+      vertical-align: middle;
+    }
+
+    /* Responsive styles */
+
+    /* For screens smaller than 600px */
+    @media (max-width: 600px) {
+      .container {
+        width: 90%;
+      }
+
+      header {
+        font-size: 24px;
+        margin-bottom: 20px;
+      }
+    }
+
+    /* For screens between 601px and 1200px */
+    @media (min-width: 601px) and (max-width: 1200px) {
+      .container {
+        width: 70%;
+      }
+    }
+
+    /* For screens larger than 1200px */
+    @media (min-width: 1201px) {
+      .container {
+        width: 50%;
+      }
+    }
+
+    /* Hide the signup section by default */
+    .signup-section, .forgot-password-section {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <section class="forms">
+      <div class="login">
+        <div class="form-content">
+          <header>Login</header>
+          <form>
+            <div class="field">
+              <input type="email" placeholder="Email" class="input-field">
+            </div>
+            <div class="field">
+              <input type="password" placeholder="Password" class="input-field">
+            </div>
+            <div class="form-link">
+              <a href="#" class="forget-pass">Forgot password?</a>
+            </div>
+            <div class="field button-field">
+              <button>Login</button>
+            </div>
+            <div class="form-link">
+              <span>Don't have an account? <a href="#" class="signup-link">Signup</a></span>
+            </div>
+          </form>
+        </div>
+        <div class="line"></div>
+        <div class="media-options">
+          <a href="#" class="facebook">
+            <i class='bx bxl-facebook-square'></i>
+            <span>Login with Facebook</span>
+          </a>
+        </div>
+        <div class="media-options">
+          <a href="#" class="google">
+            <i class='bx bxl-google'></i>
+            <span>Login with Google</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Signup section -->
+      <div class="signup-section">
+        <div class="form-content">
+          <header>Signup</header>
+          <form>
+            <div class="field">
+              <input type="text" placeholder="First Name" class="input-field">
+            </div>
+            <div class="field">
+              <input type="text" placeholder="Last Name" class="input-field">
+            </div>
+            <div class="field">
+              <input type="email" placeholder="Email" class="input-field">
+            </div>
+            <div class="field">
+              <input type="password" placeholder="Password" class="input-field">
+            </div>
+            <div class="field">
+                <input type="password" placeholder="Re-enter Password" class="input-field">
+              </div>
+            <div class="field button-field">
+              <button>Signup</button>
+            </div>
+            <div class="form-link">
+              <span>Already have an account? <a href="#" class="login-link">Login</a></span>
+            </div>
+          </form>
+        </div>
+      </div>
+
+      <!-- Forgot password section -->
+      <div class="forgot-password-section">
+        <div class="form-content">
+          <header>Forgot Password</header>
+          <form>
+            <div class="field">
+              <input type="email" placeholder="Email" class="input-field">
+            </div>
+            <div class="field">
+                <input type="password" placeholder="NewPassword" class="input-field">
+              </div>
+            <div class="field button-field">
+              <button>Reset Password</button>
+            </div>
+            <div class="form-link">
+              <span>Remembered your password? <a href="#" class="login-link">Login</a></span>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <script>
+    const loginSection = document.querySelector('.login');
+    const signupSection = document.querySelector('.signup-section');
+    const forgotPasswordSection = document.querySelector('.forgot-password-section');
+    const signupLink = document.querySelector('.signup-link');
+    const loginLink = document.querySelector('.login-link');
+    const forgetPassLink = document.querySelector('.forget-pass');
+
+    signupLink.addEventListener('click', () => {
+      loginSection.style.display = 'none';
+      signupSection.style.display = 'block';
+    });
+
+    loginLink.addEventListener('click', () => {
+      loginSection.style.display = 'block';
+      signupSection.style.display = 'none';
+      forgotPasswordSection.style.display = 'none';
+    });
+
+    forgetPassLink.addEventListener('click', () => {
+      loginSection.style.display = 'none';
+      forgotPasswordSection.style.display = 'block';
+    });
+    const loginLinkOnForgotPassword = document.querySelector('.forgot-password-section .login-link');
+    loginLinkOnForgotPassword.addEventListener('click', () => {
+        loginSection.style.display = 'block';
+        signupSection.style.display = 'none';
+        forgotPasswordSection.style.display = 'none';
+    });
+  </script>
+</body>
+</html>
