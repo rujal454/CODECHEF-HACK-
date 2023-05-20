@@ -17,7 +17,9 @@
     }
 
     body {
-      background-color: #4070f4;
+      background-image: url('https://drive.google.com/uc?export=view&id=19svAe7Ehig4cPNCWQPDmHTOoeqInY-2b');
+      background-repeat: no-repeat;
+      background-size: cover;
       display: flex;
       justify-content: center;
       align-items: center;
@@ -74,7 +76,8 @@
     }
 
     .field input {
-      border: 1px solid white;
+      border: 1px solid ;
+      background-color: lightyellow;
     }
 
     .form-link {
@@ -142,7 +145,7 @@
       border-radius: 4px;
       padding: 6px 12px;
       position: relative;
-      top: -30px;
+      top: -20px;
       align-items: center;
       justify-content: center;
       cursor: pointer;
@@ -162,7 +165,7 @@
 
     .media-options .google img {
       width: 18px;
-      height: 18px;
+      height: 15px;
       margin-right: 5px;
       vertical-align: middle;
     }
@@ -196,7 +199,7 @@
     }
 
     /* Hide the signup section by default */
-    .signup-section {
+    .signup-section, .forgot-password-section, .otp-section {
       display: none;
     }
   </style>
@@ -246,17 +249,26 @@
           <header>Signup</header>
           <form>
             <div class="field">
-              <input type="text" placeholder="Name" class="input-field">
-            </div>
-            <div class="field">
-              <input type="text" placeholder="Last Name" class="input-field">
+              <input type="text" placeholder="Agency Name" class="input-field">
             </div>
             <div class="field">
               <input type="email" placeholder="Email" class="input-field">
             </div>
             <div class="field">
+              <input type="text" placeholder="City" class="input-field">
+            </div>
+            <div class="field">
+              <input type="text" placeholder="Mobile number" class="input-field">
+            </div>
+            <div class="field">
+              <input type="text" placeholder="Agency Description" class="input-field">
+            </div>
+            <div class="field">
               <input type="password" placeholder="Password" class="input-field">
             </div>
+            <div class="field">
+                <input type="password" placeholder="Re-enter Password" class="input-field">
+              </div>
             <div class="field button-field">
               <button>Signup</button>
             </div>
@@ -265,44 +277,101 @@
             </div>
           </form>
         </div>
-        <div class="line"></div>
-        <div class="media-options">
-          <a href="#" class="facebook">
-            <i class='bx bxl-facebook-square'></i>
-            <span>Signup with Facebook</span>
-          </a>
+      </div>
+
+      <!-- Forgot password section -->
+      <div class="forgot-password-section">
+        <div class="form-content">
+          <header>Forgot Password</header>
+          <form>
+            <div class="field">
+              <input type="email" placeholder="Email" class="input-field">
+            </div>
+            <div class="field button-field">
+              <button class="otp-button">Generate OTP</button>
+            </div>
+            <div class="form-link">
+              <span>Remembered your password? <a href="#" class="login-link">Login</a></span>
+            </div>
+          </form>
         </div>
-        <div class="media-options">
-          <a href="#" class="google">
-            <i class='bx bxl-google'></i>
-            <span>Signup with Google</span>
-          </a>
+      </div>
+
+      <!-- OTP section -->
+      <div class="otp-section">
+        <div class="form-content">
+          <header>Enter OTP and New Password</header>
+          <form>
+            <div class="field">
+              <input type="text" placeholder="OTP" class="input-field">
+            </div>
+            <div class="field">
+              <input type="password" placeholder="New Password" class="input-field">
+            </div>
+            <div class="field button-field">
+              <button class="reset-button">Reset Password</button>
+            </div>
+            <div class="form-link">
+              <span>Remembered your password? <a href="#" class="login-link">Login</a></span>
+            </div>
+          </form>
         </div>
       </div>
     </section>
   </div>
 
   <script>
-    document.addEventListener("DOMContentLoaded", function () {
-      const loginLink = document.querySelector(".login-link");
-      const signupLink = document.querySelector(".signup-link");
-      const loginSection = document.querySelector(".login");
-      const signupSection = document.querySelector(".signup-section");
+    const loginSection = document.querySelector('.login');
+    const signupSection = document.querySelector('.signup-section');
+    const forgotPasswordSection = document.querySelector('.forgot-password-section');
+    const otpSection = document.querySelector('.otp-section');
+    const signupLink = document.querySelector('.signup-link');
+    const loginLink = document.querySelector('.login-link');
+    const forgetPassLink = document.querySelector('.forget-pass');
+    const otpButton = document.querySelector('.otp-button');
+    const resetButton = document.querySelector('.reset-button');
 
-      // Show login section and hide signup section
-      loginLink.addEventListener("click", function (e) {
-        e.preventDefault();
-        loginSection.style.display = "block";
-        signupSection.style.display = "none";
-      });
-
-      // Show signup section and hide login section
-      signupLink.addEventListener("click", function (e) {
-        e.preventDefault();
-        loginSection.style.display = "none";
-        signupSection.style.display = "block";
-      });
+    signupLink.addEventListener('click', () => {
+      loginSection.style.display = 'none';
+      signupSection.style.display = 'block';
     });
+
+    loginLink.addEventListener('click', () => {
+      loginSection.style.display = 'block';
+      signupSection.style.display = 'none';
+      forgotPasswordSection.style.display = 'none';
+      otpSection.style.display = 'none';
+    });
+
+    forgetPassLink.addEventListener('click', () => {
+      loginSection.style.display = 'none';
+      forgotPasswordSection.style.display = 'block';
+      otpSection.style.display = 'none';
+    });
+
+    otpButton.addEventListener('click', () => {
+      forgotPasswordSection.style.display = 'none';
+      otpSection.style.display = 'block';
+    });
+
+    resetButton.addEventListener('click', () => {
+      alert('Password reset successful!');
+      loginSection.style.display = 'block';
+      forgotPasswordSection.style.display = 'none';
+      otpSection.style.display = 'none';
+    });
+    const rememberPassLink = document.querySelectorAll('.login-link');
+
+      rememberPassLink.forEach(link => {
+        link.addEventListener('click', () => {
+          loginSection.style.display = 'block';
+          forgotPasswordSection.style.display = 'none';
+          otpSection.style.display = 'none';
+        });
+      });
+
+
+
   </script>
 </body>
 </html>
