@@ -74,19 +74,26 @@
     }
 
    
-    .back-button {
-      text-align: center;
-      margin-top: 20px;
-    }
+  
+    .navbar {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    line-height: 30px;
+    font-size: 16px;
+    color: #4070f4;
+    cursor: pointer; }
 
-    .back-button a {
-      text-decoration: none;
-      color: black;
-      padding: 10px 20px;
-      background-color: lightgray;
-      border-radius: 5px;
-    }
-
+  .navbar a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 18px;
+    margin-right: 10px; 
+  }
    
     @media screen and (max-width: 768px) {
       .container {
@@ -109,9 +116,10 @@
   </style>
 </head>
 <body>
+  <div class="navbar">
+        <a href="#">Home</a> </div>
   <div class="navigation">
     <ul>
-      <li><a href="webmain.html">Back</a></li>
     </ul>
   </div>
   <div class="container">

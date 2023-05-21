@@ -75,6 +75,25 @@
     .event-card button:hover {
       background-color: #1f55af;
     }
+    .navbar {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    line-height: 30px;
+    font-size: 16px;
+    color: #4070f4;
+    cursor: pointer; }
+
+  .navbar a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 18px;
+    margin-right: 10px; 
+  }
     @media only screen and (max-width: 768px) {
       .container {
         flex-direction: column;
@@ -87,6 +106,8 @@
   </style>
 </head>
 <body>
+  <div class="navbar">
+        <a href="#">Home</a> </div>
   <div class="container">
     <div class="event-card">
       <div class="details">
